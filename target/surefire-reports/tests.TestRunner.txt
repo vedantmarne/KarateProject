@@ -1,0 +1,17 @@
+-------------------------------------------------------------------------------
+Test set: tests.TestRunner
+-------------------------------------------------------------------------------
+Tests run: 15, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 11.716 sec <<< FAILURE!
+[6:53] POST Demo 6([tests/Post] POST API Demo)  Time elapsed: 0.454 sec  <<< ERROR!
+com.intuit.karate.KarateException: match failed: EQUALS
+  $ | not equal | match failed for name: 'job' (MAP:MAP)
+  {"createdAt":"2022-11-16T14:19:27.251Z","name":"morpheus","id":"19","job":"engineer"}
+  {"createdAt":"#ignore","name":"morpheus","id":"#string","job":"leader"}
+
+    $.job | not equal (STRING:STRING)
+    'engineer'
+    'leader'
+
+classpath:tests/Post.feature:60
+	at <feature>.: And match response == expectedOutput (classpath:tests/Post.feature:60:60)
+
